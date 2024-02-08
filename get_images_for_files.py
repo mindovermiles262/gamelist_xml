@@ -10,13 +10,13 @@ import os
 import shutil
 
 # The directory that holds all your roms
-roms_dir = "snes/T-Z"
+roms_dir = "/home/dipsea/data/games/segacd/"
 
 # The folder where you want your images for each rom to go into
-roms_images_dir = "/home/dipsea/snes"
+roms_images_dir = "/home/dipsea/segacd"
 
 # The location of all the thumbnail images in PNG format
-images_path = "/home/dipsea/Games/thumbnails/snes/Named_Boxarts/"
+images_path = "/home/dipsea/Games/thumbnails/segacd/Named_Boxarts"
 
 # The type of images in the images_path directory
 images_ext = ".png"
@@ -29,7 +29,8 @@ for romfile in os.listdir(roms_dir):
     img_path= os.path.join(images_path, img_filename)
     if os.path.exists(img_path):
         rom_image_path = os.path.join(roms_images_dir, img_filename)
-        shutil.copyfile(img_path, rom_image_path) 
+        shutil.copyfile(img_path, rom_image_path)
+        # print(f"[*] Copied {romfile}")
     else:
         print(f"[!] Not Found {img_filename}")
 

@@ -1,12 +1,30 @@
 #!/usr/bin/env python3
 
+#
+# Given a directory containing a bunch of rom files, create a gamelist.xml file
+# with the following format for each game:
+# <gameList>
+#   <game>
+#     <path>./Yogi Bear - Great Balloon Blast (USA).gbc</path>
+#     <name>Yogi Bear - Great Balloon Blast</name>
+#     <playcount>0</playcount>
+#     <image>./images/Yogi Bear - Great Balloon Blast (USA).png</image>
+#   </game>
+#   <game>
+#     < ... >
+#   </game>
+# </gameList>
+#
+# `get_images_for_files.py`` can be used to create the directory structure for
+# this script
+#
+
 import os
-import pdb
 import re
 from dicttoxml import dicttoxml
 
-ROMS_DIR="/home/dipsea/data/games/snes/snes"
-OUTFILE="snes.xml"
+ROMS_DIR="/home/dipsea/data/games/segacd"
+OUTFILE="segacd.xml"
 
 # The name of the folder inside of ROMS_DIR where images are stored
 IMAGES_DIR="images"
